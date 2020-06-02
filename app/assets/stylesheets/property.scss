@@ -2,6 +2,10 @@ a {
   color: black;
 }
 
+ul {
+  list-style: none;
+}
+
 table {
   width: 80%;
 }
@@ -21,4 +25,14 @@ table {
 }
 .property_links {
   width:2%;
+}
+
+.show_property {
+  padding: 20px;
+  line-height: 3rem;
+  border-bottom: solid 1px gray;
+}
+
+.show_item {
+  font-weight: bold;
 }
