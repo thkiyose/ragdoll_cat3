@@ -1,11 +1,11 @@
 <h1>物件一覧</h1>
 <table>
   <tr>
-    <th>物件名</th>
-    <th>賃料</th>
-    <th>住所</th>
-    <th>築年数</th>
-    <th>備考</th>
+    <th class="property_name">物件名</th>
+    <th class="property_rent">賃料</th>
+    <th class="property_place">住所</th>
+    <th class="property_old">築年数</th>
+    <th class="property_comment">備考</th>
   </tr>
   <% @properties.each do |property| %>
     <tr>
@@ -14,9 +14,9 @@
       <td><%= property.place %></td>
       <td><%= property.old %></td>
       <td><%= property.comment %></td>
-      <td><%= link_to '詳細', properties_path %></td>
-      <td><%= link_to '編集', properties_path %></td>
-      <td><%= link_to '削除', properties_path %></td>
+      <td class="property_links"><%= link_to '詳細', properties_path %></td>
+      <td class="property_links"><%= link_to '編集', properties_path %></td>
+      <td class="property_links"><%= link_to '削除', properties_path %></td>
     </tr>
   <% end %>
 </table>
