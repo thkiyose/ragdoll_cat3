@@ -1,6 +1,6 @@
 module PropertiesHelper
-  def display_yen(rent)
-    # add commas and yen to integer
-    "#{rent.to_s(:delimitted)}円"
+  def delimit(rent)
+    # add commas then convert into string like 0000000 => "0,000,000"
+    rent.to_s(:delimited)
   end
 end
