@@ -1,0 +1,16 @@
+<div class="show_property">
+  <ul class="show_list">
+    <li><span class="show_item">物件名:</span> <%= @property.name %></li>
+    <li><span class="show_item">賃料:</span> <%= delimit(@property.rent) %>円</li>
+    <li><span class="show_item">住所:</span> <%= @property.place %></li>
+    <li><span class="show_item">築年数</span> <%= @property.old %>年</li>
+    <li><span class="show_item">備考</span> <%= @property.comment %></li>
+  </ul>
+</div>
+<div class="show_station">
+
+</div>
+<p>
+  <%= link_to '編集', properties_path %> |
+  <%= link_to '戻る', properties_path %>
+</p>
