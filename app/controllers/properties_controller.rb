@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: %i(show destroy)
+  before_action :set_property, only: %i(show edit update destroy)
   def index
     @properties = Property.all.order(created_at: :ASC)
   end
@@ -18,6 +18,17 @@ class PropertiesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @property.update(get_params)
+      redirect_to property_path(@property.id), notice: "物件を編集しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
