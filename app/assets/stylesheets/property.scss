@@ -13,16 +13,23 @@ table {
 .property_place {
   width: 12%;
 }
+
 .property_comment {
-  width: 69%;
+  width: 68%;
 }
 
-.property_name, .property_rent {
+.property_name {
+  width:6%;
+}
+
+.property_rent {
   width: 5%;
 }
+
 .property_old {
   width: 3%;
 }
+
 .property_links {
   width:2%;
 }
@@ -35,4 +42,8 @@ table {
 
 .show_item {
   font-weight: bold;
+}
+
+.property_form {
+  border-bottom: solid 1px gray;
 }
