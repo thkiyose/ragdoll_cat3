@@ -2,7 +2,7 @@
   <% if @property.errors.any? %>
     <div class="error_display">
       <% @property.errors.full_messages.each do |error| %>
-        <%= error %>
+        <p><%= error %></p>
       <% end %>
     </div>
   <% end %>
