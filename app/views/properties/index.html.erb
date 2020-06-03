@@ -16,7 +16,7 @@
       <td><%= property.comment %></td>
       <td class="property_links"><%= link_to '詳細', property_path(property.id) %></td>
       <td class="property_links"><%= link_to '編集', properties_path %></td>
-      <td class="property_links"><%= link_to '削除', properties_path %></td>
+      <td class="property_links"><%= link_to '削除', property_path(property.id) method: :delete %></td>
     </tr>
   <% end %>
 </table>
