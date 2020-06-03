@@ -9,7 +9,7 @@ module PropertiesHelper
   end
 
   def confirm_or_not
-    if controller.action_name == "new" || controller.action_name == "create"
+    if controller.action_name == "new" || controller.action_name == "create" || controller.action_name == "confirm"
       confirm_properties_path
     end
   end
