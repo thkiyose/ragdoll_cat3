@@ -13,5 +13,6 @@ module PropertiesHelper
       confirm_properties_path
     else
       property_path
+    end
   end
 end

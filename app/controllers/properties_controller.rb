@@ -36,6 +36,10 @@ class PropertiesController < ApplicationController
     redirect_to properties_path, notice: "物件を削除しました。"
   end
 
+  def confirm
+    @property = Property.new(get_params)
+  end
+
   private
   def set_property
     @property = Property.find_by(id: params[:id])
