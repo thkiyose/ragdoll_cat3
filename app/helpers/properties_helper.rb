@@ -4,7 +4,7 @@ module PropertiesHelper
     rent.to_s(:delimited)
   end
 
-  def form_for_new_propety?
+  def form_for_new_property?
     controller.action_name == "new" || controller.action_name == "create"
   end
 end
