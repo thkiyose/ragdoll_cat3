@@ -38,6 +38,7 @@ class PropertiesController < ApplicationController
 
   def confirm
     @property = Property.new(get_params)
+    render :new if @property.invalid?
   end
 
   private
