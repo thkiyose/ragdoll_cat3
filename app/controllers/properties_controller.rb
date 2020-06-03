@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: %i(show)
+  before_action :set_property, only: %i(show destroy)
   def index
     @properties = Property.all.order(created_at: :ASC)
   end
@@ -18,6 +18,11 @@ class PropertiesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @property.destroy
+    redirect_to properties_path, notice: "物件を削除しました。"
   end
 
   private
