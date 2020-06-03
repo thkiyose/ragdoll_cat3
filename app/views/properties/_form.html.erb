@@ -18,9 +18,17 @@
     <p><%= form.label :comment, "備考" %></p>
     <p><%= form.text_area :comment %></p>
   </div>
-  <% if controller.action_name = "new" %>
+  <% if form_for_new_property? %>
     <p><%= form.submit "登録する" %></p>
   <% else %>
     <p><%= form.submit "更新する" %></p>
   <% end %>
+<% end %>
+<% if form_for_new_property? %>
+  <p><%= link_to '戻る', 'javascript:history.back()' %></p>
+<% else %>
+  <p>
+    <%= link_to '詳細', property_path(@property.id) %> |
+    <%= link_to '戻る', 'javascript:history.back()' %>
+  </p>
 <% end %>
