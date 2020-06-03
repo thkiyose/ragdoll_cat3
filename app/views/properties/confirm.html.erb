@@ -11,11 +11,11 @@
   <div class="show_station">
 
   </div>
-  <% form.hidden_field :name %>
-  <% form.hidden_field :rent %>
-  <% form.hidden_field :place %>
-  <% form.hidden_field :old %>
-  <% form.hidden_field :comment %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :rent %>
+  <%= form.hidden_field :place %>
+  <%= form.hidden_field :old %>
+  <%= form.hidden_field :comment %>
   <p><%= form.submit '登録' %></p>
+  <p><%= form.submit '戻る', name:"back" %></p>
 <% end %>
-<p><%= link_to '戻る', 'javascript:history.back()' %></p>
