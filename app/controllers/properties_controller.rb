@@ -12,6 +12,8 @@ class PropertiesController < ApplicationController
     property = Property.new(get_params)
     if property.save
       redirect_to properties_path, notice: "物件を登録しました。"
+    else
+      render :new
     end
   end
 
