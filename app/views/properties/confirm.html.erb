@@ -9,7 +9,20 @@
     </ul>
   </div>
   <div class="show_station">
-
+    <ul class="show_list">
+      <% @property.stations.each_with_index do |station,index| %>
+        <h2>最寄り駅<%= index + 1 %></h2>
+        <li><span class="show_item">路線名</span> <%= station.line_near %></li>
+        <li><span class="show_item">駅名</span> <%= station.station_near %></li>
+        <li><span class="show_item">徒歩分数</span> <%= station.minutes_needed %>分</li>
+      <% end %>
+      <%= form.fields_for :stations do |s| %>
+        <%= s.hidden_field :line_near %>
+        <%= s.hidden_field :station_near %>
+        <%= s.hidden_field :minutes_needed %>
+        <%= s.hidden_field :property_id %>
+      <% end %>
+    <ul>
   </div>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :rent %>

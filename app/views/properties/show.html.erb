@@ -8,9 +8,18 @@
   </ul>
 </div>
 <div class="show_station">
-
+  <% if !@stations.blank? %>
+    <% @stations.each_with_index do |station,index| %>
+      <h2>最寄り駅<%= index + 1 %></h2>
+      <ul class="show_list">
+        <li><span class="show_item">路線名</span> <%= station.line_near %></li>
+        <li><span class="show_item">駅名</span> <%= station.station_near %></li>
+        <li><span class="show_item">徒歩分数</span> <%= station.minutes_needed %>分</li>
+      </ul>
+    <% end %>
+  <% end %>
 </div>
 <p>
   <%= link_to '編集', edit_property_path(@property.id) %> |
-  <%= link_to '戻る', 'javascript:history.back()' %>
+  <%= link_to '戻る', properties_path %>
 </p>
