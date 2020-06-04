@@ -44,6 +44,7 @@ class PropertiesController < ApplicationController
 
   def confirm
     @property = Property.new(get_params)
+    @stations = @property.stations
     render :new if @property.invalid?
   end
 
