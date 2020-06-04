@@ -6,6 +6,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @property.build_station
   end
 
   def create
@@ -51,6 +52,16 @@ class PropertiesController < ApplicationController
   end
 
   def get_params
-    params.require(:property).permit(:name,:rent,:place,:old,:comment)
+    params.require(:property).permit(
+      :name,
+      :rent,
+      :place,
+      :old,
+      :comment,
+      station_attributes: [:line_near,
+                           :station_near,
+                           :minutes_needed,
+                           :property_id]
+                         )
   end
 end
