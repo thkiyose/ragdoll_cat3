@@ -38,7 +38,7 @@
   <% end %>
 <% end %>
 <% if form_for_new_property? %>
-  <p><%= link_to '戻る', 'javascript:history.back()' %></p>
+  <p><%= link_to '戻る', properties_path %></p>
 <% else %>
   <p>
     <%= link_to '詳細', property_path(@property.id) %> |
