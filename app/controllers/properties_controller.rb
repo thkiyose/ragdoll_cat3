@@ -66,7 +66,8 @@ class PropertiesController < ApplicationController
       stations_attributes: [:line_near,
                            :station_near,
                            :minutes_needed,
-                           :id]
+                           :id,
+                           :_destroy]
                          )
   end
 end

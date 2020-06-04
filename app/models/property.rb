@@ -5,5 +5,9 @@ class Property < ApplicationRecord
   validates :old, presence:true, numericality:{ only_integer:true, greater_than_or_equal_to: 0 }, length:{ maximum: 3 }
   validates :comment, length:{ maximum: 255 }
   has_many :stations, dependent: :destroy
-  accepts_nested_attributes_for :stations, allow_destroy: true
+  accepts_nested_attributes_for :stations, reject_if: :all_blank, allow_destroy: true
+
+  def reject_empty_station
+    attributes.merge!(_destroy: 1) if judge = true
+  end
 end
