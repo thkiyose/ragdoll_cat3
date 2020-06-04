@@ -13,10 +13,18 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(get_params)
+    2.times do
+      @property.stations.build
+    end
     if params[:back]
       render :new
     else
       if @property.save
+        @property.stations.each do |station|
+          if station.line_near.blank? && station.station_near.blank? && station.minutes_needed.blank?
+            station.destroy
+          end
+        end
         redirect_to properties_path, notice: "物件を登録しました。"
       else
         render :new
@@ -33,6 +41,7 @@ class PropertiesController < ApplicationController
   end
 
   def update
+    @property.stations.build
     if @property.update(get_params)
       @property.stations.each do |station|
         if station.line_near.blank? && station.station_near.blank? && station.minutes_needed.blank?
@@ -52,8 +61,13 @@ class PropertiesController < ApplicationController
 
   def confirm
     @property = Property.new(get_params)
+    2.times do
+      @property.stations.build
+    end
     @stations = @property.stations.all
-    render :new if @property.invalid?
+    if @property.invalid?
+      render :new
+    end
   end
 
   private
