@@ -8,7 +8,13 @@
   </ul>
 </div>
 <div class="show_station">
-
+  <% @stations.each do |station| %>
+  <ul class="show_list">
+    <h2>最寄り駅</h2>
+    <li><span class="show_item">路線名</span> <%= station.line_near %></li>
+    <li><span class="show_item">駅名</span> <%= station.station_near %></li>
+    <li><span class="show_item">徒歩分数</span> <%= station.minutes_needed %>分</li>
+  </ul>
 </div>
 <p>
   <%= link_to '編集', edit_property_path(@property.id) %> |
