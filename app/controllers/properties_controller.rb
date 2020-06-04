@@ -23,6 +23,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @stations = @property.stations.all
   end
 
   def edit
