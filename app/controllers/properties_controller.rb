@@ -72,8 +72,7 @@ class PropertiesController < ApplicationController
                             station_near
                             minutes_needed
                             id
-                            _destroy]
-                         )
+                            _destroy])
   end
 
   def station_form_increase
