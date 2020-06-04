@@ -47,8 +47,7 @@ class PropertiesController < ApplicationController
 
   def confirm
     @property = Property.new(get_params)
-    @stations = []
-    2.times { @stations << @property.stations.build }
+    @stations = @property.stations.all
     render :new if @property.invalid?
   end
 

@@ -15,13 +15,13 @@
         <li><span class="show_item">路線名</span> <%= station.line_near %></li>
         <li><span class="show_item">駅名</span> <%= station.station_near %></li>
         <li><span class="show_item">徒歩分数</span> <%= station.minutes_needed %>分</li>
-        <%= form.fields_for :station do |s| %>
+        <% end %>
+        <%= form.fields_for :stations do |s| %>
           <%= s.hidden_field :line_near %>
           <%= s.hidden_field :station_near %>
           <%= s.hidden_field :minutes_needed %>
           <%= s.hidden_field :property_id %>
         <% end %>
-          <% end %>
                 <ul>
   </div>
   <%= form.hidden_field :name %>
