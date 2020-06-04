@@ -6,7 +6,9 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @property.stations.build
+    2.times do
+      @property.stations.build
+    end
   end
 
   def create
@@ -27,6 +29,7 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    @property.stations.build
   end
 
   def update
@@ -44,7 +47,8 @@ class PropertiesController < ApplicationController
 
   def confirm
     @property = Property.new(get_params)
-    @stations = @property.stations
+    @stations = []
+    2.times { @stations << @property.stations.build }
     render :new if @property.invalid?
   end
 
