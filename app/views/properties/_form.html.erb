@@ -19,7 +19,7 @@
     <p><%= form.text_area :comment %></p>
   </div>
   <div class="station_form">
-    <%= form.fields_for :station do |s| %>
+    <%= form.fields_for :stations do |s| %>
       <p><%= s.label :line_near, "路線名" %></p>
       <p><%= s.text_field :line_near %></p>
       <p><%= s.label :station_near, "駅名" %></p>

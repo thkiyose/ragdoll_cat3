@@ -6,7 +6,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @property.build_station
+    @property.stations.build
   end
 
   def create
@@ -58,7 +58,7 @@ class PropertiesController < ApplicationController
       :place,
       :old,
       :comment,
-      station_attributes: [:line_near,
+      stations_attributes: [:line_near,
                            :station_near,
                            :minutes_needed,
                            :property_id]
