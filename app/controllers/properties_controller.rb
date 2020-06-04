@@ -34,6 +34,11 @@ class PropertiesController < ApplicationController
 
   def update
     if @property.update(get_params)
+      @property.stations.each do |station|
+        if station.line_near.blank? && station.station_near.blank? && station.minutes_needed.blank?
+          station.destroy
+        end
+      end
       redirect_to property_path(@property.id), notice: "物件を編集しました。"
     else
       render :edit
